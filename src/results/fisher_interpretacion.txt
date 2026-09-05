@@ -1,0 +1,12 @@
+INTERPRETACION
+------------------------------------------------------------
+1. AMPLIFICACION. El fondo amplifica hasta 10.51% dentro de la banda. Toda la informacion sobre la forma del perfil esta modulada sobre esa amplificacion: sin superradiancia no hay senal.
+
+2. DONDE ESTA LA INFORMACION. La sensibilidad |d|R|^2/du| es maxima en omega = 0.3840 (0.55 del umbral m*Omega_H). Medir cerca del umbral o cerca de omega=0 aporta poco: alli las derivadas se anulan. Esto es una prescripcion de diseno experimental, no una observacion cualitativa.
+
+3. DEGENERACION. cond(F) = 37.5. La combinacion peor determinada es -0.469*(eps/eps0) -0.883*(sigma/sigma0); la mejor determinada es -0.883*(eps/eps0) +0.469*(sigma/sigma0).
+   cond >> 1: el canal superradiante por si solo NO separa amplitud de anchura de la deformacion. Restringe una combinacion, no las dos por separado. Romper esa degeneracion exige un segundo canal independiente (los QNM).
+
+4. UMBRAL DE RUIDO. Con un error relativo tolerable del 30% en eps, la identificabilidad se pierde cuando sigma_n > 1.76e-03 en |R|^2. Contrastar con la amplificacion total del fondo (0.1051): la relacion senal/ruido util es amp/sigma_n ~ 59.5 en ese umbral.
+
+5. ALCANCE. Identificabilidad LOCAL (linealizada) del canal superradiante con m=1, sobre la familia gaussiana (eps, sigma). No incluye el canal QNM ni explora la posterior global: una inversion bayesiana podria revelar multimodalidad que la Fisher no detecta.

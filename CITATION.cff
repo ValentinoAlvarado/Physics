@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si usas este codigo, cita el trabajo como se indica abajo."
+title: "Espectroscopia inversa de horizontes acusticos: identificabilidad del perfil de flujo a partir de dispersion superradiante"
+authors:
+  - family-names: "Alvarado"
+    given-names: "Valentino"
+    orcid: "https://orcid.org/0009-0004-3630-6594"
+    affiliation: "Facultad de Ingenieria Electrica y Electronica, Universidad Nacional de Ingenieria"
+version: 0.1.0
+license: MIT
+keywords:
+  - analogue gravity
+  - acoustic black hole
+  - superradiance
+  - inverse problem
+  - Fisher information
+  - CUDA
