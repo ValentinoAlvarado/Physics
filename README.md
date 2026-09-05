@@ -43,21 +43,9 @@ Dos familias en `src/physics/deformation.py`:
 
 ## Estado
 
-| Componente | Estado |
-|---|---|
-| Geometría del vórtice (`physics/background.py`) | listo |
-| Familia de deformaciones isohorizontales | listo |
-| Potencial efectivo, reducción a forma de Schrödinger (`mathematics/potential.py`) | listo, verificado contra la forma cerrada |
-| Problema directo, dominio de frecuencia (`numerics/radial.py`) | listo |
-| Problema directo, kernel CUDA (`field/cuda_radial.py`, `field/chi2_cuda.py`) | listo, validado contra scipy |
-| Campo complejo y visualización (`field/scattering.py`, `field/coloring.py`, `viz/`) | listo |
-| Matriz de Fisher, parámetros fraccionarios (`field/fisher.py`) | listo |
-| Verosimilitud real vs. Fisher (`experiments/chi2_surface_3d.py`) | listo |
-| Búsqueda de QNM (`numerics/qnm.py`) | listo, método de disparo con acople |
-| Canal QNM incluido en el análisis de identificabilidad | pendiente |
-| Inversión bayesiana / posterior global | pendiente |
+Lo que ya funciona: la geometría del vórtice y la familia de deformaciones isohorizontales (`physics/background.py`, `physics/deformation.py`), el potencial efectivo con su reducción a forma de Schrödinger verificada contra la forma cerrada (`mathematics/potential.py`), el problema directo tanto en scipy (`numerics/radial.py`) como en el kernel CUDA (`field/cuda_radial.py`, `field/chi2_cuda.py`, validado contra scipy), el campo complejo y su visualización (`field/scattering.py`, `field/coloring.py`, `viz/`), la matriz de Fisher con parámetros fraccionarios (`field/fisher.py`), la comparación contra la verosimilitud real (`experiments/chi2_surface_3d.py`) y la búsqueda de QNM por disparo con acople (`numerics/qnm.py`).
 
-Las dos últimas son las limitaciones que ya se declararon en el póster. Siguen sin resolverse.
+Lo que falta, y ya estaba declarado como limitación en el póster: el canal QNM todavía no entra al análisis de identificabilidad, y no hay inversión bayesiana ni exploración de la posterior global. Fisher solo mira el canal superradiante.
 
 ## Por qué GPU
 
@@ -87,6 +75,9 @@ El análisis usa parámetros fraccionarios, `u_i = θ_i/θ_i⁽⁰⁾`, para que
 
 `experiments/fisher_analysis.py` tiene las figuras y la interpretación numérica completa. `experiments/chi2_surface_3d.py` tiene la comparación contra la verosimilitud real.
 
+## Figuras
+
+Ojo con esto: hay tres carpetas `results/` distintas porque cada script escribe donde le tocó por herencia del proyecto, no porque esté planeado así. Habría que consolidarlas en una sola antes de que esto quede público, pero por ahora las rutas de abajo son las reales.
 
 **Campo complejo y visor unificado**
 
@@ -143,6 +134,8 @@ Retrato de fase de log_match(ω) para m=1, con zoom cerca de ω=0. De `experimen
 </p>
 
 Sombra del horizonte sobre fondo estelar, trazado con el kernel CUDA de `cuda_kernel.py`, corrido desde `experiments/acoustic_raytracer.py`.
+
+Antes de publicar corre los scripts de nuevo y confirma que cada uno escribe donde el README dice. Algunas rutas las saqué del código, otras del nombre del archivo nomás, y esas últimas están marcadas arriba.
 
 ## Instalación
 
